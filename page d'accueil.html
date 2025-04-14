@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Plateforme d’examen en ligne</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-image: url('pc.jpg'); 
+      z-index: 20px;
+      background-size: cover;
+      background-position: center;
+      color: white;
+    }
+    .navbar {
+      background-color: white;
+      color: black;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1em 2em;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.0);
+      margin-top: 20px;
+      margin-left: 18px;
+      margin-right: 18px;
+    }
+    .navbar-left {
+      font-weight: bold;
+    }
+    .navbar-right a {
+      margin-left: 20px;
+      text-decoration: none;
+      color: black;
+      font-weight: bold;
+    }
+    .main {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 90vh;
+      text-align: center;
+      backdrop-filter: brightness(0.78);
+    }
+    .main h1 {
+      font-size: 2.5em;
+      margin-bottom: 1em;
+    }
+    .btn-group {
+      display: flex;
+      gap: 20px;
+    }
+    .btn {
+      background-color: #0a0e56;
+      color: white;
+      padding: 15px 30px;
+      border: none;
+      border-radius: 8px;
+      font-size: 1em;
+      cursor: pointer;
+    }
+    .btn:hover {
+      background-color: #1a1f70;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="navbar">
+    <div class="navbar-left">Plateforme d’examen en ligne</div>
+    <div class="navbar-right">
+      <a href="#">Connexion</a>
+      <a href="#">Contact</a>
+    </div>
+  </div>
+
+  <div class="main">
+    <h1>Bienvenue sur la plateforme<br>d’examen en ligne</h1>
+    <div class="btn-group">
+      <button class="btn">Espace Enseignant</button>
+      <button class="btn">Espace Étudiant</button>
+    </div>
+  </div>
+
+</body>
+</html>
