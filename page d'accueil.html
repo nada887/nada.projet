@@ -13,7 +13,7 @@
       color: white;
     }
 
-    .navbar {
+    .header {
       background-color: white;
       color: black;
       display: flex;
@@ -26,17 +26,17 @@
       margin-right: 18px;
     }
 
-    .navbar-left {
+    .header-left {
       font-weight: bold;
     }
 
-    .navbar-right {
+    .header-right {
       font-weight: bold;
       color: #444;
       font-size: 16px;
     }
 
-    .main {
+    .espace {
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -46,7 +46,7 @@
       backdrop-filter: brightness(0.9);/*ajuste la luminosité.*/
     }
 
-    .main h1 {
+    .espace h1 {
       font-size: 2.5em;
       margin-bottom: 1em;
     }
@@ -64,6 +64,7 @@
       border-radius: 8px;
       font-size: 1em;
       cursor: pointer;
+      text-decoration: none;
     }
 
     .btn:hover {
@@ -73,16 +74,17 @@
 </head>
 <body>
 
-  <div class="navbar">
-    <div class="navbar-left">Plateforme d’examen en ligne</div>
-    <div class="navbar-right">💡 Votre avenir commence ici</div>
+  <div class="header">
+    <div class="header-left">Plateforme d’examen en ligne</div>
+    <div class="header-right">💡 Votre avenir commence ici</div>
   </div>
 
-  <div class="main">
+  <div class="espace">
     <h1>Bienvenue sur la plateforme<br>d’examen en ligne</h1>
     <div class="btn-group">
-      <button class="btn">Espace Enseignant</button>
-      <button class="btn">Espace Étudiant</button>
+      <a href="enseignant.html" class="btn">Espace Enseignant</a>
+      <a href="etudiant.html" class="btn">Espace Étudiant</a>
+
     </div>
   </div>
 
