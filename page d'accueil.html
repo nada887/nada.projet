@@ -2,6 +2,7 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Plateforme d’examen en ligne</title>
   <style>
     body {
@@ -43,7 +44,7 @@
       justify-content: center;
       height: 90vh;
       text-align: center;
-      backdrop-filter: brightness(0.9);/*ajuste la luminosité.*/
+      backdrop-filter: brightness(0.9); /* ajuste la luminosité. */
     }
 
     .espace h1 {
@@ -70,6 +71,46 @@
     .btn:hover {
       background-color: #1a1f70;
     }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 1em;
+      }
+
+      .header-left,
+      .header-right {
+        font-size: 1.2em;
+      }
+
+      .espace h1 {
+        font-size: 2em;
+      }
+
+      .btn-group {
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      .btn {
+        width: 100%;
+        padding: 12px;
+        font-size: 0.9em;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .espace h1 {
+        font-size: 1.8em;
+      }
+
+      .btn {
+        font-size: 0.8em;
+        padding: 10px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -82,11 +123,11 @@
   <div class="espace">
     <h1>Bienvenue sur la plateforme<br>d’examen en ligne</h1>
     <div class="btn-group">
-      <a href="enseignant.html" class="btn">Espace Enseignant</a>
-      <a href="etudiant.html" class="btn">Espace Étudiant</a>
-
+      <a href=".html" class="btn">Espace Enseignant</a>
+      <a href="connexion.html" class="btn">Espace Étudiant</a>
     </div>
   </div>
 
 </body>
 </html>
+
