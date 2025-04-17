@@ -14,17 +14,16 @@
       font-family: Arial, sans-serif;
       background-color: #fdf6f0;
       display: flex;
-      flex-direction: column;/* aligne les éléments de haut en bas sur l'axe vertical*/
-      min-height: 100vh;/* la hauteur minimale d'un élément*/
+      flex-direction: column; /* aligne les éléments de haut en bas sur l'axe vertical */
+      min-height: 100vh; /* la hauteur minimale d'un élément */
     }
 
-   
     .header {
       background-color: #1f2a3f; /* Bleu foncé */
       color: white;
       padding: 1rem 2rem;
       position: relative;
-      z-index: 10;/*définir l'ordre de superposition des éléments positionnés*/
+      z-index: 10; /* définir l'ordre de superposition des éléments positionnés */
     }
 
     .header .container {
@@ -38,10 +37,8 @@
       font-weight: bold;
     }
 
-
-
     .header-wave {
-      background: #cba075; 
+      background: #cba075;
       height: 50px;
       border-bottom-left-radius: 50% 20px;
       border-bottom-right-radius: 50% 20px;
@@ -49,11 +46,10 @@
       position: relative;
     }
 
- 
     .main-wrapper {
-
       display: flex;
-  
+      flex-direction: row; /* Définit la disposition horizontale */
+      min-height: 80vh;
     }
 
     .sidebar {
@@ -77,12 +73,12 @@
       flex: 1;
       background-color: #fdf6f0;
       padding: 2rem;
-      overflow-y: auto;/* pour gérer le débordement du contenu vertical d'un élément*/
+      overflow-y: auto; /* pour gérer le débordement du contenu vertical d'un élément */
     }
 
     h2 {
       color: #0d47a1;
-      margin-top: 1rem;/* /* Ajoute un espacement entre les éléments  */
+      margin-top: 1rem; /* Ajoute un espacement entre les éléments */
     }
 
     form {
@@ -150,6 +146,74 @@
     .question-box button:hover {
       background: #7b3f1d;
     }
+
+    /* Responsive Design */
+    @media (max-width: 1024px) {
+      .main-wrapper {
+        flex-direction: column; /* Disposition verticale sur les tablettes */
+      }
+
+      .sidebar {
+        width: 100%;
+        padding: 1rem;
+      }
+
+      .sidebar h1 {
+        font-size: 1.5rem;
+        line-height: 2.5rem;
+        margin-bottom: 2rem;
+      }
+
+      .main-content {
+        padding: 1.5rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .header .logo {
+        font-size: 1.2rem;
+      }
+
+      .sidebar h1 {
+        font-size: 1.2rem;
+      }
+
+      .inline {
+        flex-direction: column;
+      }
+
+      button {
+        width: 100%;
+      }
+
+      .question-box {
+        padding: 0.8rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .header {
+        padding: 1rem;
+      }
+
+      .sidebar {
+        padding: 1rem;
+        text-align: left;
+      }
+
+      .sidebar h1 {
+        font-size: 1.1rem;
+      }
+
+      .inline {
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+
+      button {
+        padding: 8px 15px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -157,7 +221,7 @@
   <!-- HEADER -->
   <header class="header">
     <div class="container">
-      <div class="logo">Enligne<span style="color: #f0c095;">.exam</span></div>
+      <div class="logo">✅enligne<span style="color: #f0c095;">.exam</span></div>
     </div>
   </header>
   <div class="header-wave"></div>
@@ -242,5 +306,3 @@
 
 </body>
 </html>
-
-
