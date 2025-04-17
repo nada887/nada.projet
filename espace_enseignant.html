@@ -12,15 +12,53 @@
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background-color: #fdf6f0; /* beige clair */
+      background-color: #fdf6f0;
       display: flex;
-      height: 100vh;
+      flex-direction: column;/* aligne les éléments de haut en bas sur l'axe vertical*/
+      min-height: 100vh;/* la hauteur minimale d'un élément*/
     }
 
-    /* Barre latérale */
+   
+    .header {
+      background-color: #1f2a3f; /* Bleu foncé */
+      color: white;
+      padding: 1rem 2rem;
+      position: relative;
+      z-index: 10;/*définir l'ordre de superposition des éléments positionnés*/
+    }
+
+    .header .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .header .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+
+
+    .header-wave {
+      background: #cba075; 
+      height: 50px;
+      border-bottom-left-radius: 50% 20px;
+      border-bottom-right-radius: 50% 20px;
+      z-index: 10;
+      position: relative;
+    }
+
+ 
+    .main-wrapper {
+
+      display: flex;
+  
+    }
+
     .sidebar {
       width: 300px;
-      background: #0d47a1; /* Bleu foncé */
+      background: #1f2a3f; /* Bleu foncé */
       color: white;
       display: flex;
       align-items: center;
@@ -30,21 +68,21 @@
     }
 
     .sidebar h1 {
-      font-size: 1.8rem;
-      line-height: 2.5rem;
+      font-size: 2rem;
+      line-height: 4rem;
+      margin-bottom: 520px;
     }
 
-    /* Contenu principal */
     .main-content {
       flex: 1;
       background-color: #fdf6f0;
       padding: 2rem;
-      overflow-y: auto;
+      overflow-y: auto;/* pour gérer le débordement du contenu vertical d'un élément*/
     }
 
     h2 {
       color: #0d47a1;
-      margin-top: 1rem;
+      margin-top: 1rem;/* /* Ajoute un espacement entre les éléments  */
     }
 
     form {
@@ -105,7 +143,7 @@
     }
 
     .question-box button {
-      background: #a0522d; /* Marron plus doux */
+      background: #a0522d;
       margin-top: 0.5rem;
     }
 
@@ -116,81 +154,93 @@
 </head>
 <body>
 
-  <div class="sidebar">
-    <h1>Bienvenue<br>sur votre<br>espace enseignant</h1>
-  </div>
+  <!-- HEADER -->
+  <header class="header">
+    <div class="container">
+      <div class="logo">Enligne<span style="color: #f0c095;">.exam</span></div>
+    </div>
+  </header>
+  <div class="header-wave"></div>
 
-  <div class="main-content">
-    <h2>Création d’un Examen</h2>
-    <form id="examForm">
-      <label>Titre :
-        <input type="text" name="titre" required>
-      </label>
-      <label>Description :
-        <input type="text" name="description">
-      </label>
-      <label>Public ciblé :
-        <input type="text" name="public" placeholder="ex: 2e année MIP, S4, Groupe A">
-      </label>
-      <label>Lien généré :
-        <input type="text" id="examLink" readonly>
-      </label>
-      <button type="button">Ajouter l'examen</button>
-    </form>
+  <!-- CONTENU PRINCIPAL -->
+  <div class="main-wrapper">
+    <div class="sidebar">
+      <h1>Bienvenue<br>sur votre<br>espace enseignant</h1>
+    </div>
 
-    <h2>Examens créés</h2>
-    <div id="listeExamens"></div>
-
-    <h2>Ajout de Questions</h2>
-    <form id="questionForm">
-      <label>Type de question :
-        <select id="typeQuestion">
-          <option value="directe">Question Directe</option>
-          <option value="qcm">QCM</option>
-        </select>
-      </label>
-
-      <label>Énoncé :
-        <textarea name="question" rows="2"></textarea>
-      </label>
-
-      <label>Fichier joint :
-        <input type="file" accept="image/*,audio/*,video/*">
-      </label>
-
-      <!-- Partie Question Directe -->
-      <div id="directeFields">
-        <label>Réponse attendue :
-          <input type="text" name="reponseDirecte">
+    <div class="main-content">
+      <h2>Création d’un Examen</h2>
+      <form id="examForm">
+        <label>Titre :
+          <input type="text" name="titre" required>
         </label>
-        <label>Taux de tolérance (% erreurs) :
-          <input type="text" value="10%">
+        <label>Description :
+          <input type="text" name="description">
         </label>
-      </div>
-
-      <!-- Partie QCM -->
-      <div id="qcmFields" style="display: none;">
-        <label>Option 1 : <input type="text"> <input type="checkbox"> Bonne réponse</label>
-        <label>Option 2 : <input type="text"> <input type="checkbox"> Bonne réponse</label>
-        <label>Option 3 : <input type="text"> <input type="checkbox"> Bonne réponse</label>
-        <label>Option 4 : <input type="text"> <input type="checkbox"> Bonne réponse</label>
-      </div>
-
-      <div class="inline">
-        <label>Note :
-          <input type="number" value="10">
+        <label>Public ciblé :
+          <input type="text" name="public" placeholder="ex: 2e année MIP, S4, Groupe A">
         </label>
-        <label>Durée (en secondes) :
-          <input type="number" value="60">
+        <label>Lien généré :
+          <input type="text" id="examLink" readonly><!-- rendre un champ de formulaire non modifiable-->
         </label>
-      </div>
+        <button type="button">Ajouter l'examen</button>
+      </form>
 
-      <button type="button">Ajouter la question</button>
-    </form>
+      <h2>Examens créés</h2>
+      <div id="listeExamens"></div>
 
-    <div id="listeQuestions"></div>
+      <h2>Ajout de Questions</h2>
+      <form id="questionForm">
+        <label>Type de question :
+          <select id="typeQuestion">
+            <option value="directe">Question Directe</option>
+            <option value="qcm">QCM</option>
+          </select>
+        </label>
+
+        <label>Énoncé :
+          <textarea name="question" rows="2"></textarea>
+        </label>
+
+        <label>Fichier joint :
+          <input type="file" accept="image/*,audio/*,video/*">
+        </label>
+
+        <!-- Partie Question Directe -->
+        <div id="directeFields">
+          <label>Réponse attendue :
+            <input type="text" name="reponseDirecte">
+          </label>
+          <label>Taux de tolérance (% erreurs) :
+            <input type="text" value="10%">
+          </label>
+        </div>
+
+        <!-- Partie QCM -->
+        <div id="qcmFields" style="display: none;">
+          <label>Option 1 : <input type="text"> <input type="checkbox"> Bonne réponse</label>
+          <label>Option 2 : <input type="text"> <input type="checkbox"> Bonne réponse</label>
+          <label>Option 3 : <input type="text"> <input type="checkbox"> Bonne réponse</label>
+          <label>Option 4 : <input type="text"> <input type="checkbox"> Bonne réponse</label>
+        </div>
+
+        <div class="inline">
+          <label>Note :
+            <input type="number" value="10">
+          </label>
+          <label>Durée (en secondes) :
+            <input type="number" value="60">
+          </label>
+        </div>
+
+        <button type="button">Ajouter la question</button>
+      </form>
+
+      <div id="listeQuestions"></div>
+    </div>
   </div>
 
 </body>
 </html>
+
 
