@@ -151,7 +151,7 @@
 			font-size: 10px;
 			color: black;
 			position: relative;
-			top: -2px;
+			top: 2px;
 			left: 3px;
 			width: 10px;
 			height: 10px;
@@ -220,29 +220,29 @@
 			position: absolute;
 			left: 27.5vw;
 		}
-		@media screen and (max-width: 768px) {
-			.wrapper {
-				width: 90vw;
+		@media screen and (max-width: 768px) {/* tout ce qu’on veut adapter pour petits écrans */
+			.wrapper {  /*On rend le bloc principal plus petit et centré.*/
+				width: 90vw;  
 				height: auto;
 				left: 5vw;
 				top: 60px;
 			}
 			.image-wrapper {
-				display: none;
+				display: none; /*On cache l’image sur téléphone pour plus d’espace.*/
 			}
-			.signup, .signup form {
+			.signup, .signup form { /*	On élargit le formulaire pour qu’il prenne toute la largeur.*/
 				width: 100%;
 				left: 0;
 				top: 0;
 				position: relative;
 			}
-			.icon input {
+			.icon input { /*On centre les champs de saisie.*/
 				width: 80%;
 				left: 10%;
 				top: 20px;
 			}
 			.icon i {
-				left: calc(90% - 20px);
+				left: calc(90% - 20px);/*L’icône s’aligne joliment à droite du champ, même quand la largeur du champ change (sur mobile ou PC).*/
 				top: 10px;
 			}
 			.checkbox {
