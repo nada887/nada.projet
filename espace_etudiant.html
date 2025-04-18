@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>Espace Etudiant</title>
+  <title>Espace Étudiant</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     * {
@@ -64,8 +64,8 @@
     }
 
     .sidebar h1 {
-      font-size: 2rem;
-      line-height: 2.5rem;
+      font-size: 2.2rem;
+      line-height: 4rem;
       margin: 0;
     }
 
@@ -113,7 +113,8 @@
       color: #0d47a1;
       font-weight: bold;
       display: block;
-      margin-bottom: 10px;
+      margin-bottom:33px;
+      line-height: 3rem;
     }
 
     button {
@@ -156,8 +157,8 @@
       form {
         padding: 1.5rem;
         max-width: 90%;
-        left: 0;  /* Réduit le décalage à gauche pour les petits écrans */
-        top: 0;   /* Supprime le décalage en haut */
+        left: 0;  /* Enlève l'espace de décalage à gauche */
+        top: 0;  /* Enlève l'espace de décalage en haut */
       }
 
       label {
@@ -172,17 +173,16 @@
     /* Pour les très petits écrans */
     @media (max-width: 480px) {
       form {
-        padding: 1.5rem;
-        left: 0;
-        top: 0;
+        padding: 1.5rem;  /* Réduit encore le padding pour les très petits écrans */
+        max-width: 100%;  /* Assure que le formulaire prend toute la largeur de l'écran */
+      }
+
+      label {
+        font-size: 18px;  /* Taille plus petite pour les très petits écrans */
       }
 
       input, button {
         font-size: 14px;
-      }
-
-      label {
-        font-size: 18px;
       }
     }
   </style>
@@ -198,7 +198,7 @@
 
   <div class="main-wrapper">
     <div class="sidebar">
-      <h1>Bienvenue<br>sur votre<br>espace etudiant</h1>
+      <h1>Bienvenue<br>sur votre<br>espace étudiant</h1>
     </div>
 
     <div class="main-content">
@@ -217,3 +217,10 @@
 
 </body>
 </html>
+
+
+
+
+
+
+
