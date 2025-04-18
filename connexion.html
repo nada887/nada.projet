@@ -237,45 +237,67 @@
 		/* Responsive */
 		@media screen and (max-width: 768px) {
 			/* tout ce qu’on veut adapter pour petits écrans */
-			.wrapper {  /*On rend le bloc principal plus petit et centré.*/
+			.wrapper {
 				width: 90vw;
 				height: auto;
 				left: 5vw;
 				top: 60px;
+				padding: 20px;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
 			}
 			.image-wrapper {
 				display: none; /*On cache l’image sur téléphone pour plus d’espace.*/
 			}
-			.signup, .signup form { /*	On élargit le formulaire pour qu’il prenne toute la largeur.*/
+			.signup, .signup form {
 				width: 100%;
 				left: 0;
 				top: 0;
 				position: relative;
 			}
-			.icon input { /*On centre les champs de saisie.*/
-				width: 80%;
-				left: 10%;
-				top: 20px;
+			.wrapper h3, .wrapper h4, .wrapper h2 {
+				position: static;
+				text-align: center;
+				font-size: 28px;
+				margin-top: 10px;
+			}
+			.icon {
+				width: 100%;
+				margin-top: 20px;
+				text-align: left;
+				padding: 0 10%;
+			}
+			.icon span {
+				position: static;
+				top: 0;
+				left: 0;
+			}
+			.icon input {
+				width: 100%;
+				position: static;
+				margin-top: 5px;
 			}
 			.icon i {
-				left: calc(90% - 20px); /*L’icône s’aligne joliment à droite du champ, même quand la largeur du champ change (sur mobile ou PC).*/
-				top: 10px;
+				position: absolute;
+				right: 12%;
+				top: 45px;
 			}
 			.checkbox {
 				left: 10%;
-				top: 40px;
+				top: 0;
+				margin-top: 10px;
 			}
 			.wrapper button, .button2 button {
 				width: 80%;
-				left: 10%;
-				bottom: 0;
-				top: 60px;
-				position: relative;
+				margin: 15px auto 0;
+				position: static;
+				display: block;
 			}
 			.wrapper p, .wrapper a {
-				left: 0;
-				top: 60px;
+				position: static;
 				text-align: center;
+				margin-top: 10px;
 			}
 		}
 	</style>
@@ -317,4 +339,7 @@
 <script type="text/javascript" src="js/main.js"></script>
 </body>
 </html>
+
+
+
 
