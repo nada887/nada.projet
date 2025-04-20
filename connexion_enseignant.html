@@ -203,8 +203,9 @@
 			color: #0d47a1;
 		}
 		.wrapper a:hover {
-			background-color: black;
+			background-color: #0d47a1;
 			transition: all 0.4s ease 0s;
+			color: white;
 		}
 		.button2 button {
 			position: relative;
@@ -303,7 +304,7 @@
 </head>
 <body>
 <header>
-	<a href="">
+
 		<h1><span class="first-text"> ✅enligne</span>.exam</h1>
 	</a>
 	<a href="page d'accueil.html" class="btn"><button>Accueil</button></a>
@@ -335,14 +336,14 @@
 			<button type="submit">Se connecter</button>
 
 			<p>Vous n´avez pas de compte? </p>
-			<a href="">Inscrivez-vous maintenant</a>
-			<div class="button2"><button type="button">Créer un compte</button></div>
+			<a href="inscription_enseignant.html">Inscrivez-vous maintenant</a>
+			<div class="button2"><button type="button" onclick="window.location.href='inscription_enseignant.html'">Créer un compte</button></div>
 		</form>
 	</div>
 </div>
 <script>
 document.getElementById('loginForm').addEventListener('submit', function(event)/*on va faire notre propre action qu'on veut quand on clique sur "Se connecter"*/ {
-  event.preventDefault();  // Empêche l'envoi automatique , pour laisse-moi gérer ce qui se passe.
+  event.preventDefault();  // Empêche l'envoi automatique , pouraisse-moi gérer ce qui se passe.
 
 
   // Redirection vers la page enseignant
